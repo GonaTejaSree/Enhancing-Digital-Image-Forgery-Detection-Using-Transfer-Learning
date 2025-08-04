@@ -1,0 +1,6 @@
+from PIL import Image
+import numpy as np
+
+# Generate and save img_002.jpg in authentic folder
+img = Image.fromarray(np.uint8(np.random.rand(224, 224, 3) * 255))
+img.save("dataset/authentic/img_002.jpg")

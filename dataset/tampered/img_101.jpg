@@ -1,0 +1,12 @@
+from PIL import Image, ImageDraw
+import numpy as np
+
+# Create a random color image
+img = Image.fromarray(np.uint8(np.random.rand(224, 224, 3) * 255))
+
+# Simulate tampering by drawing a black rectangle (forged area)
+draw = ImageDraw.Draw(img)
+draw.rectangle([60, 60, 120, 120], fill=(0, 0, 0))
+
+# Save the tampered image
+img.save("dataset/tampered/img_101.jpg")

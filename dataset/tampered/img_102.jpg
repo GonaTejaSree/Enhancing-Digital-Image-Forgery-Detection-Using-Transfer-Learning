@@ -1,0 +1,12 @@
+from PIL import Image, ImageDraw
+import numpy as np
+
+# Create a random image
+img = Image.fromarray(np.uint8(np.random.rand(224, 224, 3) * 255))
+
+# Simulate tampering by drawing a red ellipse
+draw = ImageDraw.Draw(img)
+draw.ellipse([70, 70, 150, 150], fill=(255, 0, 0))
+
+# Save the tampered image
+img.save("dataset/tampered/img_102.jpg")
